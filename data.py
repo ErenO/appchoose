@@ -8,7 +8,7 @@ def load_data(file, credentials):
      
     # Arguments
         file: A file path specifying where the database should be saved or read from.
-        credentials: A dictionary. 
+        credentials: A dictionary storing the parameters to pass to elasticsearch.Elasticsearch(). 
     # Returns
         A list of dictionaries.
     # References
