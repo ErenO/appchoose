@@ -3,8 +3,7 @@ import pickle
 from elasticsearch import Elasticsearch
 
 def load_data(file, credentials):
-    
-     """ Retrieve data from an Elasticsearch database
+    """Retrieve data from an Elasticsearch database.
      
     # Arguments
         file: A file path specifying where the database should be saved or read from.
@@ -14,7 +13,6 @@ def load_data(file, credentials):
     # References
         - https://gist.github.com/drorata/146ce50807d16fd4a6aa
     """
-    
     if not os.path.exists(file):
         
         es = Elasticsearch(credentials['ES_HOST'], 
