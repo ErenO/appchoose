@@ -43,7 +43,7 @@ def replace(string, substitutions):
     return regex.sub(lambda match: substitutions[match.group(0)], string)
 
 def extract_filepath(source, aws):
-    """Extract the item brand and the file name. 
+    """Extract item brand and file name. 
     
     # Arguments
         source: A dictionary listing an item's attributes.

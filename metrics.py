@@ -14,7 +14,7 @@ def recall(y_true, y_pred):
     recall = true_positives / (possible_positives + K.epsilon())
     return recall
 
-def fbeta_score(y_true, y_pred, beta=1):
+def fbeta_score(y_true, y_pred, beta = 1):
     # Calculates the F score, the weighted harmonic mean of precision and recall.
 
     if beta < 0:
@@ -32,4 +32,4 @@ def fbeta_score(y_true, y_pred, beta=1):
 
 def fmeasure(y_true, y_pred):
     # Calculates the f-measure, the harmonic mean of precision and recall.
-    return fbeta_score(y_true, y_pred, beta=1)
+    return fbeta_score(y_true, y_pred, beta = 1)
