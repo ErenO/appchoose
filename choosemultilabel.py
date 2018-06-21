@@ -1,7 +1,7 @@
 import keras
 from keras.models import Model
 from keras.applications.mobilenetv2 import MobileNetV2
-from keras.layers import *
+from keras.layers import GlobalAveragePooling2D, Dense, Dropout, BatchNormalization
 
 def ChooseMultiLabel(input_shape = [224, 224, 3], 
                      dropout = 0.3,
