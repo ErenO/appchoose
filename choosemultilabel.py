@@ -7,7 +7,21 @@ def ChooseMultiLabel(input_shape = [224, 224, 3],
                      dropout = 0.3,
                      classes = 1000,
                      trainable_layers = 5):
-
+    '''Multilabel classifier.
+    
+    This classifier is built upon the MobileNetV2 architecture from which 
+    the top layer has been removed. It has proven to be quite effective 
+    while being extremely portable.
+    
+    # Arguments
+        input_shape: shape tuple.
+        dropout: proportion of neurons to drop in each `Dropout` layer.
+        classes: number of classes to classify images into.
+        trainable_layers: number of layers to set as trainable.
+        
+    # Returns
+        A Keras `Model` instance.
+    '''
     base_model = MobileNetV2(weights = 'imagenet', include_top = False, input_shape = input_shape)
     x = base_model.output
     x = GlobalAveragePooling2D()(x)
