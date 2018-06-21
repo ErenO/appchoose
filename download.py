@@ -6,14 +6,6 @@ import urllib.parse
 from PIL import Image
 from resizeimage import resizeimage
 
-d_str = {"-": "_",
-         " ": "_",
-         "'": "",
-         ".": "",
-         "?": "",
-         "!": "",
-         "%20": "_"}
-
 def resize_img(imgpath, target_size = 224):
     """Resize an image.
     
@@ -60,6 +52,7 @@ def extract_filepath(source, aws):
     # Returns
         A list containing the item brand and the file name.
     """
+    d_str = {"-": "_", " ": "_", "'": "", ".": "", "?": "", "!": "", "%20": "_"}
     imgpath = urllib.parse.unquote(source['img'].replace(aws, ''))
     brd = replace(imgpath.split("/")[0].lower(), d_str)
     filename = imgpath.split("/")[-1]
