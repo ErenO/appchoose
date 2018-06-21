@@ -69,7 +69,7 @@ def img_downloader(source,
                    target_dir, 
                    aws,
                    target_size = 224):
-    """Download an image 
+    """Download an image.
     
     # Arguments
         source: A dictionary listing an item's attributes.
