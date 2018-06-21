@@ -3,7 +3,19 @@ from keras.utils import Sequence
 from cv2 import imread
 
 class DataGenerator(Sequence):
+    '''Image Data Generator.
     
+    Further improvements can be made here (e.g. data augmentation).
+    
+    # Arguments
+        x_set: A list of file paths.
+        y_set: A list of one-hot encoded labels (one label being a list of attributes).
+        batch_size: An integer specifying the number of samples to include in a batch.
+    
+    # Returns
+        One tensor storing the batch of images (batch_size, image_height, image_width, 3) and 
+        one tensor storing the batch of one-hot encoded labels.
+    '''
     def __init__(self, x_set, y_set, batch_size):
         self.x, self.y = x_set, y_set
         self.batch_size = batch_size
